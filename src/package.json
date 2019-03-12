@@ -1,0 +1,17 @@
+{
+  "name": "notification-system",
+  "version": "1.0.0",
+  "description": "MicroTech Notification System",
+  "main": "www/index.js",
+  "author": "lee m. lwando",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.16.4",
+    "http-errors": "^1.7.1",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.9",
+    "morgan": "^1.9.1",
+    "uuid": "^3.3.2"
+  }
+}
