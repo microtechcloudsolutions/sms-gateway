@@ -70,11 +70,13 @@ Vagrant.configure("2") do |config|
     #   vb.memory = "1024"
     # end
     config.vm.synced_folder "../.", "/sourcecode/" 
+    config.vm.provision "docker" do |d|
 
-    install_images.each do |images|
-        config.vm.provision "shell", path: images["path"], args: images["args"]
+        install_images.each do |images|
+            config.vm.provision "shell", path: images["path"], args: images["args"]
+        end 
+           
     end
-   
 
     # View the documentation for the provider you are using for more
     # information on available options.
