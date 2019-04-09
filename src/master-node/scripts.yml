@@ -1,9 +1,9 @@
 ---
 # - path: "https://gist.githubusercontent.com/microtechcloud/09acc94f351b0b61bcc672969bcb2868/raw/aa27210b5f2a8e20271f4d17036df1b20f6cd05d/provision.sh"
   # args: ""
-- path: "https://gist.githubusercontent.com/microtechcloud/09acc94f351b0b61bcc672969bcb2868/raw/69d1f363967b203ab0a19d5d70a94e91e0e98256/install_consul.sh"
-  args: "8500:8500"
-- path: "https://gist.githubusercontent.com/microtechcloud/09acc94f351b0b61bcc672969bcb2868/raw/69d1f363967b203ab0a19d5d70a94e91e0e98256/install_registrator.sh"
+- path: "install_consul.sh"
+  args: "8500 8500"
+- path: "install_registrator.sh"
   args: ""
-- path: "https://gist.githubusercontent.com/microtechcloud/09acc94f351b0b61bcc672969bcb2868/raw/69d1f363967b203ab0a19d5d70a94e91e0e98256/install_jenkins.sh"
+- path: "install_jenkins.sh"
   args: ""
