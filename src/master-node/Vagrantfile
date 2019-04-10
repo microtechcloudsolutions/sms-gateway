@@ -72,10 +72,12 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "../.", "/sourcecode/" 
     config.vm.provision "docker" do |d|
 
-        install_images.each do |images|
-            config.vm.provision "shell", path: images["path"], args: images["args"]
-        end 
-           
+        # install_images.each do |images|
+        #     config.vm.provision "shell", path: images["path"], args: images["args"]
+        # end 
+        # config.vm.provision "shell", inline:"/bin/bash docker-compose up"
+        config.vm.provision :docker
+        config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", rebuild: true, run: "always"
     end
 
     # View the documentation for the provider you are using for more
