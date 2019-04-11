@@ -39,3 +39,17 @@ services:
     ports:
       - "8080:8080"
       - "50000:50000"
+    
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    hostname: "master-node"
+    restart: always:
+    depends_on:
+      - consul
+      - registrator
+      - jenkins
+    volumes:
+      - "/sourcecode/nginx.conf:/etc/nginx/sites-available/default"
+    ports:
+      - "80:80"
