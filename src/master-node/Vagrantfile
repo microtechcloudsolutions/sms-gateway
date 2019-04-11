@@ -78,6 +78,7 @@ Vagrant.configure("2") do |config|
         # config.vm.provision "shell", inline:"/bin/bash docker-compose up"
         config.vm.provision :docker
         config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", rebuild: true, run: "always"
+        config.vm.provision "shell", path: "install_consul-template.sh"
     end
 
     # View the documentation for the provider you are using for more

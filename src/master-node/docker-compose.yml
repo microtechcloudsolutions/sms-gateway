@@ -50,6 +50,6 @@ services:
       - registrator
       - jenkins
     volumes:
-      - "/sourcecode/nginx.conf:/etc/nginx/sites-available/default"
+      - "/sourcecode/master-node/nginx.conf:/etc/nginx/sites-available/default"
     ports:
       - "80:80"
