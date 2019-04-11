@@ -44,11 +44,10 @@ services:
     image: nginx:latest
     container_name: nginx
     hostname: "master-node"
-    restart: always:
+    restart: always
     depends_on:
       - consul
       - registrator
-      - jenkins
     volumes:
       - "/sourcecode/master-node/nginx.conf:/etc/nginx/sites-available/default"
     ports:

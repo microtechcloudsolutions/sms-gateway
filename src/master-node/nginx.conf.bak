@@ -25,10 +25,6 @@ upstream consul-8600 {
   server 172.18.0.2:8600 max_fails=3 fail_timeout=60 weight=1;
   server 172.18.0.2:8600 max_fails=3 fail_timeout=60 weight=1;
   
-}   
-upstream redis {
-  server 172.17.0.2:6379 max_fails=3 fail_timeout=60 weight=1;
-  
 } 
 
 
@@ -82,10 +78,6 @@ server {
 	 
 	location /consul-8600 {
 		proxy_pass http://consul-8600;
-	}
-	 
-	location /redis {
-		proxy_pass http://redis;
 	}
 	
 
