@@ -4,6 +4,9 @@ const router = express.Router();
 
 const register = require("./register");
 const login = require("./login");
+const session = require("./session");
+
+const redis = require("../lib/redis");
 
 router.get("/",(req,res,next)=>res.json({success:true, message:"SMS-GATEWAY USER MANAGEMENT SERVICE",date:(new Date),internal: true, protected: false}))
 
@@ -25,13 +28,26 @@ router.post("/register",(req,res,next)=>{
 });
 
 router.post("/login",passport.authenticate("local",{session:false}),(req,res,next)=>{
-            console.log(req.user)
         login(req.user).then(login=>{
+           
+            redis.auth.save_login_token({token:login.token,payload:login.payload});
+            login.payload = null
             login.message = "login successfull";
             login.date = new Date();
             res.json(login)
-        }).catch(err=>res.json(err));
+
+        }).catch(err=>{
+            console.log(err)
+            res.json(err)
+        });
 });
+
+router.get("/session",(req,res,next)=>{
+
+        session({token:req.query.token},(err, payload)=>{
+            res.json({err,payload})
+        })
+})
 
 
 module.exports = router;

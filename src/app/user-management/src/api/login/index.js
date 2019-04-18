@@ -14,6 +14,6 @@ module.exports = (args)=>{
         }
 
         token = jwt.sign(args.payload,args.secret);
-        return resolve({success:true,token});
+        return resolve({success:true,token, payload:args.payload});
     })
 }
