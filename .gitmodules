@@ -1,0 +1,3 @@
+[submodule "src/app/contacts"]
+	path = src/app/contacts
+	url = https://github.com/microtechcloudsolutions/contacts_RESTful_API
