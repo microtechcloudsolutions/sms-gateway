@@ -6,7 +6,8 @@ module.exports = (args)=>{
         if(!args || typeof args !== "object"){
             return reject({success: false, message:"please provide valid args"})
         }
-        
+        let user = args;
+        args.phone = [{primary:true,number: args.phone.primary},{primary:false,number:args.phone.other[0]}]
         User.create(args,function(err,user){
 
             if(err){
