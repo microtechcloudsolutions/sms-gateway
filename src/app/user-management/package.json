@@ -1,0 +1,24 @@
+{
+  "name": "user-management",
+  "version": "1.0.0",
+  "description": "SMS Gateway user management service",
+  "main": "./src/bin/www",
+  "repository": "https://github.com/microtechcloudsolutions/sms-gateway/user-management",
+  "author": "lee m lwando",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.4.9",
+    "node-input-validator": "^3.1.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.3",
+    "supertest": "^4.0.2"
+  }
+}
