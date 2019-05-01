@@ -16,11 +16,6 @@ router.get("/register",(req,res,next)=>res.json({success:true, message: "Registr
 
 router.post("/register",(req,res,next)=>{
     console.log(req.body)
-    // {
-    //     "email":"leemlwando@gmail.com",
-    //     "password":"1234"
-    // }
-
 
     register(req.body).then(user=>{
         res.json(user);
@@ -28,18 +23,18 @@ router.post("/register",(req,res,next)=>{
 });
 
 router.post("/login",passport.authenticate("local",{session:false}),(req,res,next)=>{
-        login(req.user).then(login=>{
-           
-            redis.auth.save_login_token({token:login.token,payload:login.payload});
-            login.payload = null
-            login.message = "login successfull";
-            login.date = new Date();
-            res.json(login)
+    login(req.user).then(login=>{
+        
+        redis.auth.save_login_token({token:login.token,payload:login.payload});
+        login.payload = null;
+        login.message = "login successfull";
+        login.date = new Date();
+        res.json(login)
 
-        }).catch(err=>{
-            console.log(err)
-            res.json(err)
-        });
+    }).catch(err=>{
+        console.log(err)
+        res.json(err)
+    });
 });
 
 router.get("/session",(req,res,next)=>{

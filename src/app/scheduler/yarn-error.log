@@ -1,0 +1,44 @@
+Arguments: 
+  /usr/bin/node /home/lee/.yarn/bin/yarn.js add agenda agendadash agenda-rest
+
+PATH: 
+  /home/lee/.yarn/bin:/home/lee/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/lee/Android/Sdk/tools:/home/lee/Android/Sdk/platform-tools:/usr/local/go/bin:/home/lee/Android/Sdk/tools:/home/lee/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  8.15.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/agendadash: Not found
+      at Request.params.callback [as _callback] (/home/lee/.yarn/lib/cli.js:65894:18)
+      at Request.self.callback (/home/lee/.yarn/lib/cli.js:129018:22)
+      at emitTwo (events.js:126:13)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (/home/lee/.yarn/lib/cli.js:129990:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (/home/lee/.yarn/lib/cli.js:129912:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)
+
+npm manifest: 
+  {
+    "name": "scheduler",
+    "version": "1.0.0",
+    "description": "scheduler service for background jobs",
+    "main": "./src/bin/www",
+    "author": "lee m. lwando",
+    "license": "MIT",
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

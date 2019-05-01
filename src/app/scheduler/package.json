@@ -1,0 +1,20 @@
+{
+  "name": "scheduler",
+  "version": "1.0.0",
+  "description": "scheduler service for background jobs",
+  "main": "./src/bin/www",
+  "author": "lee m. lwando",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "agenda": "^2.0.2",
+    "agendash": "^1.0.0",
+    "bull": "^3.7.0",
+    "bull-arena": "^2.6.2",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.2",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.25"
+  }
+}

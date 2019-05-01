@@ -1,0 +1,21 @@
+{
+    "job_type":["bulk_sms"],
+    "schedule_type":"once_at",
+    "job_name":"send Easter Message",
+    "job_payload":{
+    	"message":"Happy Easter Holidays - MicroTech",
+    	"destination_type":["group","contacts","oganization"],
+    	"contacts":["0950482560"]
+    },
+    "run_type":"at",
+    "run_time":{
+    	"input_type":"datetime_input",
+    	"year":false,
+    	"month":false,
+    	"day":false,
+    	"date":false,
+        "hour":false,
+        "minutes":38,
+        "seconds":60
+    }
+}
