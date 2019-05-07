@@ -1,0 +1,23 @@
+{	
+	"purchase_type":"stock",
+	"purchase_price":5000,
+	"bought_at":"",
+	"expire_at":"",
+	"total_balance":40000,
+	"stock_allocated":{
+		"microtech":"500",
+		"partners":"25000",
+		"clients":"14500"
+		},
+	"allocated_bundles":[],
+	"max_per_user":{
+		"microtech":"500",
+		"partners":"500",
+		"clients":"500"
+		},
+	"min_per_user":{
+		"microtech":"0",
+		"partners":"0",
+		"clients":"0"
+	}
+}

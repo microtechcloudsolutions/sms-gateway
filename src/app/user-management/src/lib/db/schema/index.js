@@ -15,7 +15,7 @@ const UserSchema = new Schema({
     password:{type:String, required:true},
     phone:[{primary:{type:Boolean,default:false},number:{type:String, unique:true}}],
     user_type:{type:String, enums:["organization", "personal"]},
-    business_type:{type:String, enums:["client", "partner"]},
+    business_type:{type:String, enums:["client", "partner","provider"]},
     provider_type:{type:Array, enums: ["sms-provider","payments-providers"]},
     user_roles:{type:String, enums:["admin","user"]},
     developer:{type:Boolean, default:false},

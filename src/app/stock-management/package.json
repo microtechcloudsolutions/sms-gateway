@@ -1,0 +1,14 @@
+{
+  "name": "stock-management",
+  "version": "1.0.0",
+  "main": "src/bin/www",
+  "author": "lee m. lwando",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "amqplib": "^0.5.3",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.2",
+    "mongoose": "^5.5.5"
+  }
+}
