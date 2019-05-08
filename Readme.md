@@ -3,7 +3,7 @@
 ##### [![MicroTechCloud|Open Source Initiative](http://microtechcloud.co)](http://microtechcloud.co/open-source-initiative/sms-gateway)
 
 [![Build Status](https://travis-ci.org/microtechcloudsolutions/sms-gateway.svg?branch=masterr)]()
-# Problem Statement
+# PROBLEM STATEMENT
 
 Despite the few SMS solutions currently on the market, there lacks a fully functional and comprehensive SMS marketing platform which provides its users with the ability to conveniently manage contacts by grouping them in appropriate categories or groups, schedule SMS , run marketing campaigns etc.
 
