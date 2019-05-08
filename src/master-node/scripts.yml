@@ -1,0 +1,9 @@
+---
+- path: "install_docker-compose.sh"
+  args: ""
+# - path: "install_with_docker_compose.sh"
+#   args: ""
+# - path: "install_registrator.sh"
+#   args: ""
+# - path: "install_jenkins.sh"
+#   args: ""

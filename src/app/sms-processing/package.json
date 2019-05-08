@@ -1,0 +1,15 @@
+{
+  "name": "sms-processing",
+  "version": "1.0.0",
+  "description": "responsible for processing SMSs | storing sending history etc",
+  "main": "src/bin/www",
+  "author": "lee m. lwando",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.5.5",
+    "morgan": "^1.9.1",
+    "request": "^2.88.0"
+  }
+}

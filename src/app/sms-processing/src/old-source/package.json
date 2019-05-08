@@ -1,0 +1,14 @@
+{
+  "name": "sms-processing",
+  "version": "1.0.0",
+  "description": "sms processing service",
+  "main": "src/bin/www",
+  "author": "lee m. lwando",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.9",
+    "morgan": "^1.9.1"
+  }
+}

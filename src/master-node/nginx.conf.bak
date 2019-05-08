@@ -1,0 +1,84 @@
+  
+upstream consul {
+  server 172.18.0.2:8300 max_fails=3 fail_timeout=60 weight=1;
+  
+}   
+upstream consul-8300 {
+  server 172.18.0.2:8300 max_fails=3 fail_timeout=60 weight=1;
+  
+}   
+upstream consul-8301 {
+  server 172.18.0.2:8301 max_fails=3 fail_timeout=60 weight=1;
+  server 172.18.0.2:8301 max_fails=3 fail_timeout=60 weight=1;
+  
+}   
+upstream consul-8302 {
+  server 172.18.0.2:8302 max_fails=3 fail_timeout=60 weight=1;
+  server 172.18.0.2:8302 max_fails=3 fail_timeout=60 weight=1;
+  
+}   
+upstream consul-8500 {
+  server 172.18.0.2:8500 max_fails=3 fail_timeout=60 weight=1;
+  
+}   
+upstream consul-8600 {
+  server 172.18.0.2:8600 max_fails=3 fail_timeout=60 weight=1;
+  server 172.18.0.2:8600 max_fails=3 fail_timeout=60 weight=1;
+  
+} 
+
+
+
+# Default server configuration
+
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	# SSL configuration
+	#
+	# listen 443 ssl default_server;
+	# listen [::]:443 ssl default_server;
+
+	root /var/www/html;
+
+	# Add index.php to the list if you are using PHP
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ =404;
+	}
+
+
+
+	 
+	location /consul {
+		proxy_pass http://consul;
+	}
+	 
+	location /consul-8300 {
+		proxy_pass http://consul-8300;
+	}
+	 
+	location /consul-8301 {
+		proxy_pass http://consul-8301;
+	}
+	 
+	location /consul-8302 {
+		proxy_pass http://consul-8302;
+	}
+	 
+	location /consul-8500 {
+		proxy_pass http://consul-8500;
+	}
+	 
+	location /consul-8600 {
+		proxy_pass http://consul-8600;
+	}
+	
+
+}

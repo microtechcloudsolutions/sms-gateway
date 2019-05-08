@@ -1,0 +1,41 @@
+{{range services}} {{$name := .Name}} {{$service := service .Name}}
+upstream {{$name}} {
+  {{range $service}}server {{.Address}}:{{.Port}} max_fails=3 fail_timeout=60 weight=1;
+  {{else}}server 127.0.0.1:65535; # force a 502{{end}}
+} {{end}}
+
+
+
+# Default server configuration
+
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	# SSL configuration
+	#
+	# listen 443 ssl default_server;
+	# listen [::]:443 ssl default_server;
+
+	root /var/www/html;
+
+	# Add index.php to the list if you are using PHP
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ =404;
+	}
+
+
+
+	{{range services}} {{$name := .Name}}
+	location /{{$name}} {
+		proxy_pass http://{{$name}};
+	}
+	{{end}}
+
+}

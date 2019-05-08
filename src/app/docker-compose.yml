@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+  consul:
+    image: consul:latest
+    hostname: ragnarok
+    container_name: consul
+    ports:
+      - "8500:8500"
+      - "8300:8300"
+    command: "agent -server -bind 0.0.0.0 -client 0.0.0.0 -bootstrap-expect=1 -ui"
+
+  registrator:
+    image: gliderlabs/registrator:master
+    container_name: registrator
+    hostname: ragnarok
+    network_mode: "host"
+    restart: always
+    depends_on:
+    - consul
+    volumes:
+    - /var/run/docker.sock:/tmp/docker.sock
+    command: "consul://localhost:8500"
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    hostname: ragnarok
+    restart: always
+    depends_on:
+      - redis
+    ports:
+      - "27017:27017"
+
+  user-management:
+    build: ./user-management
+    container_name: user-management
+    hostname: ragnarok
+    restart: always
+    depends_on:
+      - mongodb
+    ports:
+      - 3000:3000
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    depends_on:
+      - registrator
+    ports:
+      - "5055:6379"

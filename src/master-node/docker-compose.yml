@@ -1,0 +1,54 @@
+version: "3"
+
+services:
+
+  consul:
+    image: consul:latest
+    hostname: "master-node"
+    container_name: consul
+    restart: always
+    ports:
+      - "8500:8500"
+      - "8300:8300"
+    command: "agent -server -bind 0.0.0.0 -client 0.0.0.0 -bootstrap-expect=1 -ui"
+
+  registrator:
+    image: gliderlabs/registrator:master
+    hostname: "master-node"
+    container_name: registrator
+    network_mode: "host"
+    restart: always
+    depends_on:
+      - consul
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
+    command: "-internal consul://localhost:8500"
+  
+  jenkins:
+    image: jenkinsci/blueocean
+    container_name: jenkins
+    user: root
+    hostname: "master-node"
+    restart: always
+    depends_on:
+      - consul
+      - registrator
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/jenkins-data:/var/jenkins_home
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    hostname: "master-node"
+    restart: always
+    depends_on:
+      - consul
+      - registrator
+    volumes:
+      - "/sourcecode/master-node/nginx.conf:/etc/nginx/sites-available/default"
+    ports:
+      - "80:80"

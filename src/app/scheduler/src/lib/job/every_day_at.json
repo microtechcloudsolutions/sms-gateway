@@ -1,0 +1,16 @@
+{
+    "job_type":["bulk_sms"],
+    "schedule_type":"every_day_at",
+    "job_name":"send Easter Message",
+    "job_payload":{
+    	"message":"Happy Easter Holidays - MicroTech",
+    	"destination_type":["group","contacts","oganization"],
+    	"contacts":["0950482560"]
+    },
+    "run_time":{
+	    "days":[
+	        {"year":2019,"month":4,"date":1, "freq":[{"time":{"hour":15,"minutes":17}},{"time":{"hour":15,"minutes":19}}]},
+			{"year":2019,"month":4,"date":1, "freq":[{"time":{"hour":15,"minutes":18}}, {"time":{"hour":15,"minutes":16}}]}
+			]
+    }
+}
