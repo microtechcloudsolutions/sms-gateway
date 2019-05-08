@@ -1,14 +1,8 @@
-CRM =====================>
-PROJECTS & TASKS =========>
-NOTIFICATIONS =============>
-COMMUNICATION ==============>
-DOCUMENT MANAGEMENT =========>
+#SMS Gateway RoadMap
 
-                                            NOTIFICATION SYSTEM
-                                                    |
-                                            DOCUMENT MAMAGEMENT
-                                                    |
-                                              COMMUINCATION
-                                                    |
-                                            PROJECTS & TASKS
-                        
+
+#Phase One
+ -Features
+
+#Phase Two
+ -features
