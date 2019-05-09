@@ -62,7 +62,6 @@ You can find the full documentation [![here](http://microtechcloud/docs/img/sms-
 ### Todos
 
  - Add Contributors
- - Add License
  - Add Documentation
 
 License
