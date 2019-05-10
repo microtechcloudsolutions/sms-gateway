@@ -1,6 +1,6 @@
 # SMS Gateway
 
-##### [![MicroTechCloud|Open Source Initiative](http://microtechcloud.co)](http://microtechcloud.co/open-source-initiative/sms-gateway)
+##### [![MicroTechCloud | Open Source Initiative](http://microtechcloud.co)](http://microtechcloud.co/open-source-initiative/sms-gateway)
 
 [![Build Status](https://travis-ci.org/microtechcloudsolutions/sms-gateway.svg?branch=masterr)]()
 
@@ -17,17 +17,17 @@ SMS Gateway aims at bridging that gap by proving a bulk sms solution to SMEs, in
 
 # What We Hope to Achieve
 
-The SMS Gateway aims to at providing quality marketing platform for SMEs , institutions and clubs o    f various organizations. Furthermore, The SMS Gateway solution achieves the following:
+The SMS Gateway aims to at providing quality marketing platform for SMEs , institutions and clubs of various organizations. Furthermore, The SMS Gateway solution achieves the following:
 
-Provide an affordable SMS marketing platform 
-Allow users to schedule SMS
-Enable users to run SMS campaigns
-Manage contacts, groups, organizations, departments and employee contacts
-Provide easy to integrate APIs for developers.
+- Provide an affordable SMS marketing platform 
+- Allow users to schedule SMS
+- Enable users to run SMS campaigns
+- Manage contacts, groups, organizations, departments and employee contacts
+- Provide easy to integrate APIs for developers.
 
 # Proposed Features
 
-The SMS Gateway provides convenience and efficienciency in the way we organize contacts and send out notifications. SMS Gateway features allow a user to :
+The SMS Gateway provides convenience and efficiency in the way we organize contacts and send out notifications. SMS Gateway features allow a user to :
 
 - MANAGE CONTACTS
 A user can create, edit, remove, or block any contacts. The SMS Gateway allows users to create bulk contacts by importing from a csv file.
